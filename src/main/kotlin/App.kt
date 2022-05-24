@@ -5,7 +5,7 @@ data class App(
     val company: String,
     val category: String,
     val lastUpdated: LocalDate,
-    val size: String,
+    val size: Pair<String, Long>,
     val installs: Long,
     val currentVersion: String,
     val requiresAndroid: String
