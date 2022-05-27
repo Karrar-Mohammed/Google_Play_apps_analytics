@@ -38,7 +38,9 @@ fun readInput(listOfApps: List<App>): Int {
 
         "3" -> {
             val oldest = oldestApp(listOfApps)
-            println("oldest app is : ${oldest.appName} ${oldest.lastUpdated}")
+            if (oldest is App) {
+                println("oldest app is : ${oldest.appName} ${oldest.lastUpdated}")
+            } else println("it's empty list")
         }
 
         "4" -> {
@@ -55,9 +57,11 @@ fun readInput(listOfApps: List<App>): Int {
 
         "6" -> {
             val top10= top10InstalledApp(listOfApps)
-            top10.forEach {
-                println("${it.appName} ${it.installs}")
-            }
+            if(top10 is List<*>){
+                top10.forEach {it as App
+                    println("${it.appName} ${it.installs}")
+                }
+            } else println("empty list")
         }
 
     }
@@ -95,22 +99,29 @@ fun numberOfMedicalApps(list: List<App>): Int {
     return list.count { it.category == "Medical" }
 }
 
-fun oldestApp(list: List<App>): App {
-    var oldestApp = list[0]
-    list.forEach {
-        if (it.lastUpdated < oldestApp.lastUpdated) {
-            oldestApp = it
+fun oldestApp(list: List<App>): Any {
+    return if (list.isNotEmpty()) {
+        var oldestApp = list[0]
+        list.forEach {
+            if (it.lastUpdated < oldestApp.lastUpdated) {
+                oldestApp = it
+            }
         }
+        oldestApp
     }
-    return oldestApp
+    else -1
 }
 
 fun percentageOfAppsRunningOnAndroid9AndUp(list: List<App>): Double {
-    return (list.count { it.requiresAndroid == "9 and up" }.toDouble() / list.size.toDouble() * 100).roundTo1Digit()
+    return if(list.isNotEmpty()) {
+        (list.count { it.requiresAndroid == "9 and up" }.toDouble() / list.size.toDouble() * 100).roundTo1Digit()
+    } else -1.0
 }
 
-fun top10InstalledApp(list: List<App>): List<App> {
-    return list.sortedByDescending { it.installs }.take(10)
+fun top10InstalledApp(list: List<App>): Any {
+    return if (list.isNotEmpty()) {
+        list.sortedByDescending { it.installs }.take(10)
+    } else -1
 }
 
 fun convertStringDateToLocalDateObject(date: String): LocalDate {
@@ -129,7 +140,7 @@ fun sizeConverter(size: String): Long {
         'M' -> ((size.take(size.length -1)).toDouble() * 1048576).toLong()
         'k' -> ((size.take(size.length -1)).toDouble() * 1024).toLong()
         'e' -> 0
-        else -> throw Exception("fuck you")
+        else -> throw Exception("Unknown type")
     }
 }
 
