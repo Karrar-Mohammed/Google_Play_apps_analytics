@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MainKtTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2022-05-29T00:51:51" hostname="DESKTOP-T45ROGM" time="0.106">
+  <properties/>
+  <testcase name="should_returnNull_whenWrongSizeGiven()" classname="MainKtTest" time="0.025"/>
+  <testcase name="should_return0_whenNoAppsRunningOnAndroid9InTheList()" classname="MainKtTest" time="0.029"/>
+  <testcase name="should_return0_whenNoAppDevelopedByGoogleInTheList()" classname="MainKtTest" time="0.001"/>
+  <testcase name="should_returnMinus1_whenEmptyListGiven()" classname="MainKtTest" time="0.001"/>
+  <testcase name="should_return0_whenEmptyListGiven()" classname="MainKtTest" time="0.001"/>
+  <testcase name="should_returnSizeInBytes_whenSizeInKiloByteGiven()" classname="MainKtTest" time="0.003"/>
+  <testcase name="should_returnSizeInBytes_whenSizeInGigaByteGiven()" classname="MainKtTest" time="0.0"/>
+  <testcase name="should_returnTop10InstalledApps_whenCorrectListGiven()" classname="MainKtTest" time="0.004"/>
+  <testcase name="should_returnMinus1_whenEmptyListOfLargestAppsGiven()" classname="MainKtTest" time="0.0"/>
+  <testcase name="should_return0_whenNoMedicalAppsInTheList()" classname="MainKtTest" time="0.001"/>
+  <testcase name="should_returnNumberOfApp_whenCorrectListGiven()" classname="MainKtTest" time="0.001"/>
+  <testcase name="should_return0_whenCorrectListGiven()" classname="MainKtTest" time="0.001"/>
+  <testcase name="should_returnSizeInBytes_whenSizeInMegaByteGiven()" classname="MainKtTest" time="0.0"/>
+  <testcase name="should_returnTheOldestAppDate_whenCorrectListGIven()" classname="MainKtTest" time="0.019"/>
+  <testcase name="should_returnNumberOfMedicalApps_whenCorrectListGiven()" classname="MainKtTest" time="0.001"/>
+  <testcase name="should_returnPercentageOfAppsRunningOnAndroid9AndUp_whenCorrectListGiven()" classname="MainKtTest" time="0.0"/>
+  <testcase name="should_returnLargest10Apps_whenCorrectListGiven()" classname="MainKtTest" time="0.002"/>
+  <testcase name="should_returnMinus1_whenEmptyListOFAppsGiven()" classname="MainKtTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
