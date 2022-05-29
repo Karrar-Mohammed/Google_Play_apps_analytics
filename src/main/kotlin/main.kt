@@ -50,8 +50,10 @@ fun readInput(listOfApps: List<App>): Int {
 
         "5" -> {
             val largestApps = getLargest10Apps(listOfApps)
-            largestApps.forEach {
-                println("${it.appName} ${it.size.first}")
+            if ( largestApps is List<*>) {
+                largestApps.forEach { it as App
+                    println("${it.appName} ${it.size.first}")
+                }
             }
         }
 
@@ -129,18 +131,19 @@ fun convertStringDateToLocalDateObject(date: String): LocalDate {
     return LocalDate.parse(date, formatter)
 }
 
-fun getLargest10Apps(list: List<App>): List<App> {
-    return list.sortedByDescending { it.size.second }.take(10)
+fun getLargest10Apps(list: List<App>): Any {
+    return if (list.isNotEmpty()) {
+        return list.sortedByDescending { it.size.second }.take(10)
+    } else -1
 }
 
 
-fun sizeConverter(size: String): Long {
+fun sizeConverter(size: String): Long? {
     return when(size.last()) {
         'G' -> ((size.take(size.length -1)).toDouble() * 1073741824).toLong()
         'M' -> ((size.take(size.length -1)).toDouble() * 1048576).toLong()
         'k' -> ((size.take(size.length -1)).toDouble() * 1024).toLong()
-        'e' -> 0
-        else -> throw Exception("Unknown type")
+        else -> null
     }
 }
 
