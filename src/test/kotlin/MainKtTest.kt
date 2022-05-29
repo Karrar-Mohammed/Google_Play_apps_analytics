@@ -1,5 +1,6 @@
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.Assertions.*
 
 internal class MainKtTest {
 
@@ -11,7 +12,7 @@ internal class MainKtTest {
         //When
         val result = sizeConverter(sizeInMB)
         //Then
-        assertEquals(2254857830,result)
+        assertEquals(2254857830, result)
     }
 
     @Test
@@ -21,7 +22,7 @@ internal class MainKtTest {
         //When
         val result = sizeConverter(sizeInMB)
         //Then
-        assertEquals(2411724,result)
+        assertEquals(2411724, result)
     }
 
     @Test
@@ -31,7 +32,7 @@ internal class MainKtTest {
         //When
         val result = sizeConverter(sizeInMB)
         //Then
-        assertEquals(4096,result)
+        assertEquals(4096, result)
     }
 
     @Test

@@ -1,5 +1,3 @@
-
-
 class Analyzer {
 
     fun numberOfAppsDevelopedByGoogle(list: List<App>): Int {
@@ -20,12 +18,11 @@ class Analyzer {
                 }
             }
             oldestApp
-        }
-        else -1
+        } else -1
     }
 
     fun percentageOfAppsRunningOnAndroid9AndUp(list: List<App>): Double {
-        return if(list.isNotEmpty()) {
+        return if (list.isNotEmpty()) {
             (list.count { it.requiresAndroid == "9 and up" }.toDouble() / list.size.toDouble() * 100).roundTo1Digit()
         } else -1.0
     }

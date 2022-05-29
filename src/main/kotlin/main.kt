@@ -51,17 +51,19 @@ fun readInput(listOfApps: List<App>): Int {
 
         "5" -> {
             val largestApps = analyzer.getLargest10Apps(listOfApps)
-            if ( largestApps is List<*>) {
-                largestApps.forEach { it as App
+            if (largestApps is List<*>) {
+                largestApps.forEach {
+                    it as App
                     println("${it.appName} ${it.size.first}")
                 }
             }
         }
 
         "6" -> {
-            val top10= analyzer.top10InstalledApp(listOfApps)
-            if(top10 is List<*>){
-                top10.forEach {it as App
+            val top10 = analyzer.top10InstalledApp(listOfApps)
+            if (top10 is List<*>) {
+                top10.forEach {
+                    it as App
                     println("${it.appName} ${it.installs}")
                 }
             } else println("empty list")
@@ -97,14 +99,13 @@ fun convertStringDateToLocalDateObject(date: String): LocalDate {
 }
 
 fun sizeConverter(size: String): Long? {
-    return when(size.last()) {
-        'G' -> ((size.take(size.length -1)).toDouble() * 1073741824).toLong()
-        'M' -> ((size.take(size.length -1)).toDouble() * 1048576).toLong()
-        'k' -> ((size.take(size.length -1)).toDouble() * 1024).toLong()
+    return when (size.last()) {
+        'G' -> ((size.take(size.length - 1)).toDouble() * 1073741824).toLong()
+        'M' -> ((size.take(size.length - 1)).toDouble() * 1048576).toLong()
+        'k' -> ((size.take(size.length - 1)).toDouble() * 1024).toLong()
         else -> null
     }
 }
-
 
 
 fun Double.roundTo1Digit(): Double = round(this * 10) / 10
